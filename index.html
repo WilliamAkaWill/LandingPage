@@ -102,11 +102,6 @@
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
         }
         
-        /* Utility for transitions */
-        .fade-in-delayed {
-            animation: fadeIn 2s ease-out forwards;
-        }
-
         .nav-active {
             color: #00f3ff !important;
             border-bottom-color: #00f3ff !important;
@@ -185,8 +180,9 @@
 
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Über Mich">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-space-accent rounded-full shadow-[0_0_15px_#00f3ff]"></div>
+                    <!-- GEÄNDERT: max-w-md (breiter) und h-64 md:h-96 (deutlich höher) -->
                     <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm md:max-w-md h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="/images/joker.jpg" alt="joker" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -197,9 +193,11 @@
                             </div>
                             <p class="text-gray-300 leading-relaxed">
                                 Hey! Mein Name ist wie man unschwer erkennen kann William.
-                                <br>
+                                <br><br>
                                 Alles in allem kann man mich wohl als einen leidenschaftlichen Entwickler und Nerd beschreiben.
-                                Ich schaue gerne Anime, Serien und Filme, zocke gerne am PC und wenn ich grade nichts davon Tue, bin ich wohl grade am Programmieren. 👀
+                                Ich schaue gerne Anime, Serien und Filme, zocke gerne am PC und wenn ich grade nichts davon Tue, bin ich wohl grade am Programmieren.
+                                <br><br>
+                                Ich liebe es, neue Technologien zu erforschen und Systeme zu bauen, die nicht nur funktionieren, sondern auch ästhetisch ansprechend sind – genau wie diese Seite hier. 👀
                             </p>
                         </div>
                     </div>
@@ -207,8 +205,9 @@
 
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Über Mich">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
+                    <!-- GEÄNDERT: max-w-md (breiter) und h-64 md:h-96 (deutlich höher) -->
                     <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm md:max-w-md h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="/images/fun_fact2.jpg" alt="fun fact" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -218,8 +217,11 @@
                                 <h3 class="text-xl font-bold text-white">Fun Facts</h3>
                             </div>
                             <p class="text-gray-300 leading-relaxed">
-                                Wie wahrscheinlich schon vermuten, wird man mich nicht auf Partys oder in Clubs antreffen, sondern eher in einem dunklen Raum mit mehreren Monitoren, 
-                                gegebenfalls aber auch draußen in der Natur beim Spazieren, auf welchen ich auch gerne mal Bilder mache, ein paar exemplare könnt ihr unter <b>Gallerie</b> finden.
+                                Wie wahrscheinlich schon vermuten, wird man mich nicht auf Partys oder in Clubs antreffen, sondern eher in einem dunklen Raum mit mehreren Monitoren.
+                                <br><br>
+                                Gegebenfalls aber auch draußen in der Natur beim Spazieren, auf welchen ich auch gerne mal Bilder mache, ein paar Exemplare könnt ihr weiter unten unter <b>Gallerie</b> finden.
+                                <br><br>
+                                Wenn ich könnte, würde ich wahrscheinlich meinen Energie intravenös zu mir nehmen, um maximale Coding-Effizienz zu erreichen.
                             </p>
                         </div>
                     </div>
@@ -234,8 +236,9 @@
 
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Werdegang">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-space-accent rounded-full shadow-[0_0_15px_#00f3ff]"></div>
+                    <!-- GEÄNDERT: Etwas größer als vorher -> h-64 -->
                     <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=400" alt="Tech Lead" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -254,7 +257,7 @@
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Werdegang">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
                     <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400" alt="Dev" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -280,7 +283,7 @@
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-space-glow rounded-full shadow-[0_0_15px_#bd00ff]"></div>
                     <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <div class="w-full h-full bg-space-800 flex items-center justify-center">
                                 <svg class="w-20 h-20 text-space-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
@@ -301,7 +304,7 @@
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-500 rounded-full shadow-[0_0_15px_#ec4899]"></div>
                     <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <div class="w-full h-full bg-space-800 flex items-center justify-center">
                                 <svg class="w-20 h-20 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                             </div>
@@ -327,8 +330,9 @@
 
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full shadow-[0_0_15px_#4ade80]"></div>
+                    <!-- GEÄNDERT: Etwas größer als vorher -> h-64 -->
                     <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=400" alt="Astro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -346,7 +350,7 @@
                 <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full shadow-[0_0_15px_#facc15]"></div>
                     <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
-                        <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
                             <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=400" alt="Retro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
@@ -379,21 +383,15 @@
         const authBtn = document.getElementById('auth-btn');
         const errorMsg = document.getElementById('error-msg');
         
-        // Globale Variable für den "Big Bang" status
         let universeTriggered = false;
 
         function validateToken(tokenString) {
             try {
-                // Base64 Decode
                 const decoded = atob(tokenString);
-                
-                // Split Password and Date
-                // Format: test123:2025-11-23 08:00:00
                 const parts = decoded.split(':');
                 if(parts.length < 2) return false;
 
                 const password = parts[0];
-                // Join den Rest, falls im Datum auch Doppelpunkte vorkommen (z.B. Zeit)
                 const dateString = parts.slice(1).join(':');
 
                 if (password !== 'test123') return false;
@@ -401,8 +399,6 @@
                 const expireDate = new Date(dateString);
                 const now = new Date();
                 
-                // Check if now is before expiration date (Use UTC comparison preferably)
-                // Die Bash 'date -u' liefert UTC. JS new Date() parst das gut, wenn das Format stimmt.
                 return now < expireDate;
 
             } catch (e) {
@@ -412,19 +408,17 @@
         }
 
         function triggerBigBang() {
-            universeTriggered = true; // Startet Three.js Expansion
+            universeTriggered = true; 
             
-            // UI Transition
             authOverlay.classList.add('opacity-0', 'pointer-events-none');
             setTimeout(() => {
                 authOverlay.style.display = 'none';
             }, 1000);
 
-            // App Content Fade In
             setTimeout(() => {
                 appContent.classList.remove('opacity-0', 'pointer-events-none');
                 appContent.classList.add('opacity-100');
-            }, 500); // Kurz warten bis Urknall im Gange ist
+            }, 500); 
         }
 
         function handleAuth() {
@@ -435,31 +429,25 @@
                 triggerBigBang();
             } else {
                 errorMsg.classList.remove('opacity-0');
-                // Shake Animation Effect
                 tokenInput.classList.add('border-red-500');
                 setTimeout(() => tokenInput.classList.remove('border-red-500'), 500);
             }
         }
 
-        // Event Listeners für Auth
         authBtn.addEventListener('click', handleAuth);
         tokenInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') handleAuth();
         });
 
-        // Check Local Storage on Load
         const storedToken = localStorage.getItem('cosmic_token');
         if (storedToken) {
             if (validateToken(storedToken)) {
-                // Token valide, überspringe Animation oder mache schnellen Start
-                universeTriggered = true; // Sofortiges Universum
+                universeTriggered = true; 
                 authOverlay.style.display = 'none';
                 appContent.classList.remove('opacity-0', 'pointer-events-none');
                 appContent.classList.add('opacity-100');
             } else {
-                // Token abgelaufen/invalid -> Clear
                 localStorage.removeItem('cosmic_token');
-                // Auth Overlay bleibt sichtbar
             }
         }
         // --- AUTH LOGIC END ---
@@ -491,26 +479,19 @@
         const wireframeGeometry = new THREE.WireframeGeometry(sphereGeometry);
         const sphereMaterial = new THREE.LineBasicMaterial({ color: config.sphereColor, transparent: true, opacity: 0.3 });
         const sphere = new THREE.LineSegments(wireframeGeometry, sphereMaterial);
-        
-        // Initial Scale 0 (Vor dem Urknall)
         sphere.scale.set(0, 0, 0);
         scene.add(sphere);
 
         const glowGeo = new THREE.IcosahedronGeometry(config.sphereSize * 0.95, 2);
         const glowMat = new THREE.MeshBasicMaterial({ color: config.sphereColor, transparent: true, opacity: 0.05 });
         const glowSphere = new THREE.Mesh(glowGeo, glowMat);
-        
-        // Initial Scale 0
         glowSphere.scale.set(0, 0, 0);
         scene.add(glowSphere);
 
-        // --- PARTIKEL SYSTEM (MIT BEWEGUNGSDATEN) ---
+        // --- PARTIKEL SYSTEM ---
         const particlesGeometry = new THREE.BufferGeometry();
         const posArray = new Float32Array(config.particleCount * 3);
-        const sizesArray = new Float32Array(config.particleCount);
         const colorsArray = new Float32Array(config.particleCount * 3);
-        
-        // Extra Arrays für die Animation
         const initialPosArray = new Float32Array(config.particleCount * 3);
         const randomSpeeds = new Float32Array(config.particleCount);
 
@@ -534,8 +515,6 @@
                 z = (Math.random() - 0.5) * 40;
             }
 
-            // Wir setzen die Startposition auf 0,0,0 für den "Urknall"-Effekt im Vertex Shader oder wir scalen das Mesh
-            // Einfacher: Wir speichern die Zielpositionen in initialPosArray und nutzen das Mesh scaling
             posArray[i*3] = x;
             posArray[i*3+1] = y;
             posArray[i*3+2] = z;
@@ -545,8 +524,6 @@
             initialPosArray[i*3+2] = z;
 
             randomSpeeds[i] = 0.2 + Math.random() * 0.8;
-
-            sizesArray[i] = Math.random() * 0.15;
 
             const randColor = Math.random();
             let finalColor = color3;
@@ -570,8 +547,6 @@
         });
 
         const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        
-        // Initial Scale fast 0 (Singularität)
         particleMesh.scale.set(0.01, 0.01, 0.01);
         scene.add(particleMesh);
 
@@ -579,7 +554,6 @@
         let scrollY = 0;
         let isWarping = false;
 
-        // --- EVENT LISTENERS ---
         window.addEventListener('scroll', () => { scrollY = window.scrollY; });
 
         window.addEventListener('resize', () => {
@@ -588,7 +562,6 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Navigation Logic
         const navButtons = document.querySelectorAll('.nav-btn');
         navButtons.forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -603,7 +576,6 @@
             });
         });
 
-        // Intersection Observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -621,11 +593,9 @@
 
         document.querySelectorAll('.section-observer').forEach(section => observer.observe(section));
 
-        // Hover Logic for Sphere
         const cards = document.querySelectorAll('.hover-trigger-sphere');
         cards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                // Nur wenn Universum schon existiert
                 if (!universeTriggered) return;
                 const colorHex = parseInt(card.getAttribute('data-color'));
                 const newColor = new THREE.Color(colorHex);
@@ -642,11 +612,10 @@
             });
         });
 
-        // --- SHOOTING STARS ---
         const starsGroup = new THREE.Group();
         scene.add(starsGroup);
         function createShootingStar() {
-            if(!universeTriggered) return; // Keine Sternschnuppen vor dem Urknall
+            if(!universeTriggered) return; 
             const geometry = new THREE.BufferGeometry().setFromPoints([
                 new THREE.Vector3(0,0,0), new THREE.Vector3(-2,0,0)
             ]);
@@ -659,7 +628,6 @@
         }
         setInterval(() => { if(Math.random() > 0.7) createShootingStar(); }, 2000);
 
-        // --- ANIMATION LOOP ---
         const clock = new THREE.Clock();
 
         function animate() {
@@ -667,28 +635,17 @@
             const time = clock.getElapsedTime();
             const scrollFactor = scrollY * 0.002;
 
-            // URKNALL LOGIK (Expansion)
             if (universeTriggered) {
-                // Lerp scale to 1 (Elastic effect simulated by smooth Lerp here for simplicity, 
-                // or we could add sin wave for wobble)
                 const currentScale = sphere.scale.x;
-                // Ziel ist 1.0 (oder 1.2 bei Hover, aber hier basic 1.0)
-                // Wir nutzen eine sehr schnelle Annäherung für den "Pop" Effekt
-                
-                // Sphere Expansion
                 if (currentScale < 0.99) {
                     sphere.scale.lerp(new THREE.Vector3(1,1,1), 0.05);
                     glowSphere.scale.lerp(new THREE.Vector3(1,1,1), 0.05);
                 }
-
-                // Particle Expansion (Explosion)
-                // Particles start at 0.01 scale, go to 1
                 if (particleMesh.scale.x < 0.99) {
                     particleMesh.scale.lerp(new THREE.Vector3(1,1,1), 0.03);
                 }
             }
 
-            // Sphere Rotation
             const warpSpeed = isWarping ? 5.0 : 1.0;
             sphere.rotation.y = scrollFactor + (time * 0.1);
             sphere.rotation.y += 0.005 * warpSpeed; 
@@ -697,30 +654,20 @@
             glowSphere.rotation.y = sphere.rotation.y;
             glowSphere.rotation.x = sphere.rotation.x;
             
-            // Hover Scale Reset (Smoothness) wenn nicht gehovert wird handled by event listener, 
-            // aber wir müssen aufpassen, dass wir nicht gegen den Urknall kämpfen.
-            // Die Lerp im EventListener 'mouseleave' setzt auf 1.0 zurück.
-
-            // --- DYNAMIC PARTICLE MOVEMENT (CPU) ---
             const positions = particlesGeometry.attributes.position.array;
             
             for(let i = 0; i < config.particleCount; i++) {
-                // Retrieve Initial Position
                 const ix = initialPosArray[i*3];
                 const iy = initialPosArray[i*3+1];
                 const iz = initialPosArray[i*3+2];
 
-                // Breathing
                 positions[i*3+1] = iy + Math.sin(time * randomSpeeds[i] + ix) * 0.5; 
                 positions[i*3+2] = iz + Math.cos(time * randomSpeeds[i] * 0.5 + iy) * 0.5;
             }
             
             particlesGeometry.attributes.position.needsUpdate = true;
-
-            // Global System Rotation
             particleMesh.rotation.y = -scrollFactor * 0.2 + (time * 0.02);
 
-            // Warp Visuals
             if(isWarping) {
                 particlesMaterial.size = 0.3;
                 particlesMaterial.opacity = 0.4;
@@ -729,7 +676,6 @@
                 particlesMaterial.opacity = 0.8;
             }
 
-            // Shooting Stars
             starsGroup.children.forEach(star => {
                 star.position.x += star.userData.velX;
                 star.position.y += star.userData.velY;
