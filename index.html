@@ -152,7 +152,9 @@
                 <h1 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-space-accent to-white tracking-tight mb-4 drop-shadow-[0_0_10px_rgba(0,243,255,0.5)] hover:scale-105 transition-transform cursor-default">
                     William's Portfolio
                 </h1>
-                <!-- GEÄNDERT: Nav ist jetzt 'hidden' auf Mobile und 'flex' ab Tablet (md) -->
+                <p class="text-sm md:text-base font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-space-accent to-white tracking-wide mb-6">
+                    Professional Full Stack Developer and Data Scientist
+                </p>
                 <nav class="hidden md:flex space-x-8 relative">
                     <button data-target="#section-about" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
                         Über Mich
@@ -163,8 +165,8 @@
                     <button data-target="#section-skills" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
                         Skills
                     </button>
-                    <button data-target="#section-hobbies" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
-                        Hobbies
+                    <button data-target="#section-projekte" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
+                        Projekte
                     </button>
                 </nav>
             </div>
@@ -288,7 +290,7 @@
                         <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x00f3ff">
                             <div class="flex justify-between items-start mb-2">
                                 <h3 class="text-xl font-bold text-white">Hochschule Offenburg</h3>
-                                <span class="text-xs font-mono text-space-accent border border-space-accent/30 px-2 py-1 rounded category-indicator">Master</span>
+                                <span class="text-xs font-mono text-pink-400 border border-space-accent/30 px-2 py-1 rounded category-indicator">Master</span>
                             </div>
                             <p class="text-gray-400 text-sm mb-4 font-mono">Informatik Künstliche Intelligenz</p>
                             <p class="text-gray-300 leading-relaxed">
@@ -365,51 +367,94 @@
                 </article>
             </div>
 
-            <!-- Section: Hobbies -->
-            <div id="section-hobbies" class="section-observer mb-32 relative scroll-mt-60">
+            <!-- Section: Projekte -->
+            <div id="section-projekte" class="section-observer mb-32 relative scroll-mt-60">
                 <div class="relative z-10 mb-12 text-center">
-                    <h2 class="text-4xl font-bold text-white inline-block border-b-4 border-green-400 pb-2">Hobbies</h2>
+                    <h2 class="text-4xl font-bold text-white inline-block border-b-4 border-green-400 pb-2">Projekte</h2>
                 </div>
 
-                <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
+                <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full shadow-[0_0_15px_#4ade80]"></div>
                     <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
-                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
-                            <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=400" alt="Astro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="w-full max-w-sm md:max-w-md h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                            <img src="/images/flow_bro.png" alt="flow_bro" class="w-full h-full object-cover object-right opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 md:pl-12">
                         <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x4ade80">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-white">Astrofotografie</h3>
-                                <span class="text-xs font-mono text-green-400 border border-green-400/30 px-2 py-1 rounded category-indicator">Deep Space</span>
+                                <h3 class="text-xl font-bold text-white">Flowbro</h3>
+                                <span class="text-xs font-mono text-green-400 border border-green-400/30 px-2 py-1 rounded category-indicator">Workflows</span>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">Fotografie von Nebeln und Galaxien. Langzeitbelichtungen in dunklen Nächten.</p>
+                            <p class="text-gray-300 leading-relaxed">
+                                <a href="https://flow-bro.com/" target="_blank" class="text-green-400 hover:text-green-300 underline visited:text-green-400">Flowbro</a>: Eine Workflow-Automatisierungsplattform zur Gestaltung von Prozessen für Produktstammdaten, Verwaltungsstammdaten, Produktionsstammdaten und weitere Unternehmensdaten.
+                                <br><br>
+                                Als Backend-Developer war ich für die komplette Backend-Architektur in Golang verantwortlich und habe die Plattform von Grund auf mitentwickelt.
+                            </p>
                         </div>
                     </div>
                 </article>
 
-                <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
+                <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
                     <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full shadow-[0_0_15px_#facc15]"></div>
                     <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
-                        <div class="w-full max-w-sm h-64 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
-                            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=400" alt="Retro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        <div class="w-full max-w-sm md:max-w-md h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                            <img src="/images/drama_hub.png" alt="drama_hub" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                         </div>
                     </div>
                     <div class="w-full md:w-1/2 md:order-1 md:pr-12">
                         <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0xfacc15">
                             <div class="flex justify-between items-start mb-2">
-                                <h3 class="text-xl font-bold text-white">Retro Gaming</h3>
-                                <span class="text-xs font-mono text-yellow-400 border border-yellow-400/30 px-2 py-1 rounded category-indicator">Sammlung</span>
+                                <h3 class="text-xl font-bold text-white">Drama Hub</h3>
+                                <span class="text-xs font-mono text-yellow-400 border border-yellow-400/30 px-2 py-1 rounded category-indicator">Dramen</span>
                             </div>
-                            <p class="text-gray-300 leading-relaxed">Restaurierung von SNES Konsolen und Speedrunning von 16-Bit Klassikern.</p>
+                            <p class="text-gray-300 leading-relaxed">
+                                Nach Fertigstellung der ersten Flowbro-Version entwickelten wir parallel 
+                                <a href="https://google.com/" target="_blank" class="text-yellow-400 hover:text-yellow-300 underline visited:text-yellow-400">Drama Hub</a> – eine Plattform, die einen strukturierten Überblick über aktuelle YouTube-Dramen bietet.
+                                <br><br>
+                                Als Backend-Developer entwickelte ich die komplette Backend-Architektur in Golang und Python mit gRPC und konzipierte die Microservice-Kommunikation.
+                                Hierbei habe ich auch einen <a href="https://discord.gg/TXKuZzEBV3" target="_blank" class="text-red-400 hover:text-red-300 underline visited:text-red-400">Discord-Server</a>
+                                zur Community-Interaktion eingerichtet.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-red-400 rounded-full shadow-[0_0_15px_#bd00ff]"></div>
+                    <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
+                        <div class="w-full max-w-sm md:max-w-md h-64 md:h-96 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                            <img src="/images/github.png" alt="github" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 md:pl-12">
+                        <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x4ade80">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="text-xl font-bold text-white">Github</h3>
+                                <span class="text-xs font-mono text-red-400 border border-red-400/30 px-2 py-1 rounded category-indicator">Github</span>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed">
+                                Neben größeren Projekten entwickle ich kontinuierlich kleinere Side-Projects, die meine Kreativität und technischen Skills fördern.
+                                <br><br>
+                                Beispiele hierfür sind:
+                            </p>
+                            <ul class="text-gray-300 leading-relaxed list-disc list-inside ml-4 mt-4 space-y-2">
+                                <li><strong>Dieses Portfolio</strong> – Komplett selbst designed und entwickelt mit modernsten Web-Technologien</li>
+                                <li>
+                                    <a href="https://github.com/WilliamAkaWill/tic-tac-toe" target="_blank" class="text-purple-400 hover:text-purple-300 underline visited:text-purple-400">TicTacToe-Spiel</a> 
+                                    mit KI basierend auf dem Minimax-Algorithmus
+                                </li>
+                                <li>Weitere Projekte auf meinem 
+                                    <a href="https://github.com/WilliamAkaWill/" target="_blank" class="text-orange-400 hover:text-orange-300 underline visited:text-orange-400">GitHub-Profil</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </article>
             </div>
 
             <footer class="text-center text-gray-500 text-sm pb-12 pt-12 border-t border-white/5">
-                &copy; 2025 Alexander Nova. Exploring the Digital Universe.
+                &copy; 2025 William Mendat M. Sc. - Alle Rechte vorbehalten.
             </footer>
         </main>
     </div>
