@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Timeline Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        space: {
+                            900: '#050510',
+                            800: '#0b0b20',
+                            accent: '#00f3ff',
+                            glow: '#bd00ff',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #050510;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #050510; }
+        ::-webkit-scrollbar-thumb { background: #333355; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00f3ff; }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #1a1a3a 0%, #050510 100%);
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, #00f3ff, #bd00ff, transparent);
+            z-index: 0;
+            opacity: 0.3;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-line { left: 20px; }
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 243, 255, 0.4);
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .nav-active {
+            color: #00f3ff !important;
+            border-bottom-color: #00f3ff !important;
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+        }
+    </style>
+    
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <div id="canvas-container"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 transition-all duration-300 bg-space-900/80 backdrop-blur-md border-b border-white/5">
+        <div class="container mx-auto px-4 py-4 flex flex-col items-center">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-space-accent to-white tracking-tight mb-4 drop-shadow-[0_0_10px_rgba(0,243,255,0.5)] hover:scale-105 transition-transform cursor-default">
+                ALEXANDER NOVA
+            </h1>
+            <nav class="flex space-x-8 relative">
+                <button data-target="#section-werdegang" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
+                    Werdegang
+                </button>
+                <button data-target="#section-projekte" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
+                    Projekte
+                </button>
+                <button data-target="#section-hobbies" class="nav-btn text-gray-400 hover:text-white text-sm md:text-base font-semibold tracking-wider uppercase py-2 border-b-2 border-transparent transition-all duration-300">
+                    Hobbies
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="relative pt-48 pb-20 container mx-auto px-4 max-w-5xl">
+        <div class="timeline-line"></div>
+
+        <!-- Section: Werdegang -->
+        <div id="section-werdegang" class="section-observer mb-32 relative scroll-mt-60">
+            <div class="relative z-10 mb-12 text-center">
+                <h2 class="text-4xl font-bold text-white inline-block border-b-4 border-space-accent pb-2">Werdegang</h2>
+            </div>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Werdegang">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-space-accent rounded-full shadow-[0_0_15px_#00f3ff]"></div>
+                <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=400" alt="Tech Lead" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:pl-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x00f3ff">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Senior Tech Lead</h3>
+                            <span class="text-xs font-mono text-space-accent border border-space-accent/30 px-2 py-1 rounded category-indicator">2021 - Heute</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 font-mono">TechCorp Solutions GmbH</p>
+                        <p class="text-gray-300 leading-relaxed">Leitung eines Teams von 10 Entwicklern. Architektur-Design für Cloud-Native Anwendungen.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Werdegang">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full shadow-[0_0_15px_#3b82f6]"></div>
+                <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400" alt="Dev" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:order-1 md:pr-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x3b82f6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Full Stack Developer</h3>
+                            <span class="text-xs font-mono text-blue-400 border border-blue-400/30 px-2 py-1 rounded category-indicator">2018 - 2021</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 font-mono">WebAgency Berlin</p>
+                        <p class="text-gray-300 leading-relaxed">Entwicklung von E-Commerce Lösungen mit Vue.js und Node.js.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Section: Projekte -->
+        <div id="section-projekte" class="section-observer mb-32 relative scroll-mt-60">
+            <div class="relative z-10 mb-12 text-center">
+                <h2 class="text-4xl font-bold text-white inline-block border-b-4 border-space-glow pb-2">Projekte</h2>
+            </div>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-space-glow rounded-full shadow-[0_0_15px_#bd00ff]"></div>
+                <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-full bg-space-800 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-space-glow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:order-1 md:pr-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0xbd00ff">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Cosmic Dashboard</h3>
+                            <span class="text-xs font-mono text-space-glow border border-space-glow/30 px-2 py-1 rounded category-indicator">Open Source</span>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 font-mono">Three.js, React, GraphQL</p>
+                        <p class="text-gray-300 leading-relaxed">Visualisierung von NASA-Daten in Echtzeit. 3D-Darstellung des Sonnensystems.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Projekte">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-pink-500 rounded-full shadow-[0_0_15px_#ec4899]"></div>
+                <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-full h-full bg-space-800 flex items-center justify-center">
+                            <svg class="w-20 h-20 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:pl-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0xec4899">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">AI Text Summarizer</h3>
+                            <span class="text-xs font-mono text-pink-400 border border-pink-400/30 px-2 py-1 rounded category-indicator">AI / ML</span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">Automatisierte Zusammenfassungen komplexer Texte mittels OpenAI API und Python.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Section: Hobbies -->
+        <div id="section-hobbies" class="section-observer mb-32 relative scroll-mt-60">
+            <div class="relative z-10 mb-12 text-center">
+                <h2 class="text-4xl font-bold text-white inline-block border-b-4 border-green-400 pb-2">Hobbies</h2>
+            </div>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-green-400 rounded-full shadow-[0_0_15px_#4ade80]"></div>
+                <div class="w-full md:w-1/2 md:pr-12 flex justify-center md:justify-end mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?auto=format&fit=crop&q=80&w=400" alt="Astro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:pl-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0x4ade80">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Astrofotografie</h3>
+                            <span class="text-xs font-mono text-green-400 border border-green-400/30 px-2 py-1 rounded category-indicator">Deep Space</span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">Fotografie von Nebeln und Galaxien. Langzeitbelichtungen in dunklen Nächten.</p>
+                    </div>
+                </div>
+            </article>
+
+            <article class="timeline-card group relative flex flex-col md:flex-row items-center mb-16" data-category="Hobbies">
+                <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full shadow-[0_0_15px_#facc15]"></div>
+                <div class="w-full md:w-1/2 md:order-2 md:pl-12 flex justify-center md:justify-start mb-6 md:mb-0">
+                    <div class="w-full max-w-xs h-48 rounded-xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:scale-105 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=400" alt="Retro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 md:order-1 md:pr-12">
+                    <div class="glass-card p-6 rounded-xl text-left hover-trigger-sphere" data-color="0xfacc15">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold text-white">Retro Gaming</h3>
+                            <span class="text-xs font-mono text-yellow-400 border border-yellow-400/30 px-2 py-1 rounded category-indicator">Sammlung</span>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed">Restaurierung von SNES Konsolen und Speedrunning von 16-Bit Klassikern.</p>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <footer class="text-center text-gray-500 text-sm pb-12 pt-12 border-t border-white/5">
+            &copy; 2025 Alexander Nova. Exploring the Digital Universe.
+        </footer>
+    </main>
+
+    <!-- LOGIK SCRIPT -->
+    <script type="module">
+        import * as THREE from 'three';
+
+        const config = {
+            particleCount: 6000,
+            sphereSize: 2.5,
+            sphereColor: 0x00f3ff,
+            orbitRadiusX: 8,
+            orbitRadiusZ: 6,
+            cameraZ: 15
+        };
+
+        const container = document.getElementById('canvas-container');
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050510, 0.02);
+
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = config.cameraZ;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // --- KUGELN ---
+        const sphereGeometry = new THREE.IcosahedronGeometry(config.sphereSize, 2);
+        const wireframeGeometry = new THREE.WireframeGeometry(sphereGeometry);
+        const sphereMaterial = new THREE.LineBasicMaterial({ color: config.sphereColor, transparent: true, opacity: 0.3 });
+        const sphere = new THREE.LineSegments(wireframeGeometry, sphereMaterial);
+        scene.add(sphere);
+
+        const glowGeo = new THREE.IcosahedronGeometry(config.sphereSize * 0.95, 2);
+        const glowMat = new THREE.MeshBasicMaterial({ color: config.sphereColor, transparent: true, opacity: 0.05 });
+        const glowSphere = new THREE.Mesh(glowGeo, glowMat);
+        scene.add(glowSphere);
+
+        // --- PARTIKEL SYSTEM (MIT BEWEGUNGSDATEN) ---
+        const particlesGeometry = new THREE.BufferGeometry();
+        const posArray = new Float32Array(config.particleCount * 3);
+        const sizesArray = new Float32Array(config.particleCount);
+        const colorsArray = new Float32Array(config.particleCount * 3);
+        
+        // Extra Arrays für die Animation
+        const initialPosArray = new Float32Array(config.particleCount * 3);
+        const randomSpeeds = new Float32Array(config.particleCount);
+
+        const color1 = new THREE.Color(0x00f3ff);
+        const color2 = new THREE.Color(0xbd00ff);
+        const color3 = new THREE.Color(0xffffff);
+
+        for(let i = 0; i < config.particleCount; i++) {
+            let x, y, z;
+            const isOrbit = Math.random() > 0.6;
+
+            if (isOrbit) {
+                const angle = Math.random() * Math.PI * 2;
+                const radiusVar = Math.random() * 2; 
+                x = Math.cos(angle) * (config.orbitRadiusX + radiusVar);
+                z = Math.sin(angle) * (config.orbitRadiusZ + radiusVar);
+                y = (Math.random() - 0.5) * 3; 
+            } else {
+                x = (Math.random() - 0.5) * 60;
+                y = (Math.random() - 0.5) * 60;
+                z = (Math.random() - 0.5) * 40;
+            }
+
+            posArray[i*3] = x;
+            posArray[i*3+1] = y;
+            posArray[i*3+2] = z;
+            
+            // Save initial positions for animation calculation
+            initialPosArray[i*3] = x;
+            initialPosArray[i*3+1] = y;
+            initialPosArray[i*3+2] = z;
+
+            // Random speed factor for organic movement
+            randomSpeeds[i] = 0.2 + Math.random() * 0.8;
+
+            sizesArray[i] = Math.random() * 0.15;
+
+            const randColor = Math.random();
+            let finalColor = color3;
+            if(randColor < 0.33) finalColor = color1;
+            else if(randColor < 0.66) finalColor = color2;
+
+            colorsArray[i*3] = finalColor.r;
+            colorsArray[i*3+1] = finalColor.g;
+            colorsArray[i*3+2] = finalColor.b;
+        }
+
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        particlesGeometry.setAttribute('color', new THREE.BufferAttribute(colorsArray, 3));
+
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.08,
+            vertexColors: true,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
+        });
+
+        const particleMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particleMesh);
+
+        // --- INTERAKTION STATE ---
+        let scrollY = 0;
+        let isWarping = false;
+
+        // --- EVENT LISTENERS ---
+        window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Navigation Logic
+        const navButtons = document.querySelectorAll('.nav-btn');
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = btn.getAttribute('data-target');
+                const targetSection = document.querySelector(targetId);
+                if(targetSection) {
+                    isWarping = true;
+                    setTimeout(() => { isWarping = false; }, 800);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navButtons.forEach(btn => {
+                        btn.classList.remove('nav-active', 'text-space-accent', 'border-space-accent');
+                        btn.classList.add('text-gray-400', 'border-transparent');
+                        if(btn.getAttribute('data-target') === `#${entry.target.id}`) {
+                            btn.classList.add('nav-active');
+                            btn.classList.remove('text-gray-400', 'border-transparent');
+                        }
+                    });
+                }
+            });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+
+        document.querySelectorAll('.section-observer').forEach(section => observer.observe(section));
+
+        // Hover Logic for Sphere
+        const cards = document.querySelectorAll('.hover-trigger-sphere');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const colorHex = parseInt(card.getAttribute('data-color'));
+                const newColor = new THREE.Color(colorHex);
+                sphereMaterial.color.set(newColor);
+                glowMat.color.set(newColor);
+                sphere.scale.setScalar(1.2);
+            });
+            card.addEventListener('mouseleave', () => {
+                const baseColor = new THREE.Color(config.sphereColor);
+                sphereMaterial.color.set(baseColor);
+                glowMat.color.set(baseColor);
+                sphere.scale.setScalar(1.0);
+            });
+        });
+
+        // --- SHOOTING STARS ---
+        const starsGroup = new THREE.Group();
+        scene.add(starsGroup);
+        function createShootingStar() {
+            const geometry = new THREE.BufferGeometry().setFromPoints([
+                new THREE.Vector3(0,0,0), new THREE.Vector3(-2,0,0)
+            ]);
+            const material = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 1 });
+            const star = new THREE.Line(geometry, material);
+            star.position.set((Math.random()-0.5)*40, (Math.random()-0.5)*40, -10 + Math.random()*-20);
+            star.userData = { velX: (Math.random()+0.5)*0.8, velY: (Math.random()-0.5)*0.2 };
+            starsGroup.add(star);
+            setTimeout(() => { starsGroup.remove(star); geometry.dispose(); material.dispose(); }, 1500);
+        }
+        setInterval(() => { if(Math.random() > 0.7) createShootingStar(); }, 2000);
+
+        // --- ANIMATION LOOP ---
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            const time = clock.getElapsedTime();
+            const scrollFactor = scrollY * 0.002;
+
+            // Sphere Rotation
+            const warpSpeed = isWarping ? 5.0 : 1.0;
+            sphere.rotation.y = scrollFactor + (time * 0.1);
+            sphere.rotation.y += 0.005 * warpSpeed; 
+            sphere.rotation.x = Math.sin(time * 0.5) * 0.2 + (scrollY * 0.0005);
+            
+            glowSphere.rotation.y = sphere.rotation.y;
+            glowSphere.rotation.x = sphere.rotation.x;
+            sphere.scale.lerp(new THREE.Vector3(1,1,1), 0.05);
+
+            // --- DYNAMIC PARTICLE MOVEMENT (CPU) ---
+            const positions = particlesGeometry.attributes.position.array;
+            
+            for(let i = 0; i < config.particleCount; i++) {
+                // Retrieve Initial Position
+                const ix = initialPosArray[i*3];
+                const iy = initialPosArray[i*3+1];
+                const iz = initialPosArray[i*3+2];
+
+                // Add Organic "Breathing" (Sine Wave based on time + speed)
+                // Move slightly in Y (up/down) and Z (forward/back)
+                positions[i*3+1] = iy + Math.sin(time * randomSpeeds[i] + ix) * 0.5; 
+                positions[i*3+2] = iz + Math.cos(time * randomSpeeds[i] * 0.5 + iy) * 0.5;
+            }
+            
+            // Mark as needs update because we changed positions
+            particlesGeometry.attributes.position.needsUpdate = true;
+
+            // Global System Rotation (Orbit effect)
+            particleMesh.rotation.y = -scrollFactor * 0.2 + (time * 0.02);
+
+            // Warp Visuals
+            if(isWarping) {
+                particlesMaterial.size = 0.3;
+                particlesMaterial.opacity = 0.4;
+            } else {
+                particlesMaterial.size = 0.08;
+                particlesMaterial.opacity = 0.8;
+            }
+
+            // Shooting Stars
+            starsGroup.children.forEach(star => {
+                star.position.x += star.userData.velX;
+                star.position.y += star.userData.velY;
+                star.material.opacity -= 0.02;
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        animate();
+        if(navButtons[0]) navButtons[0].classList.add('nav-active');
+    </script>
+</body>
+</html>
